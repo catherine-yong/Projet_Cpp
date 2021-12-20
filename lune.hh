@@ -23,7 +23,7 @@ class Lune : public Planete
 
   private :
   std::string nom;
-  std::int nombre; 
+  std::int nombre;
   std::double masse;
   std::double distance_planete;
   std::double prix;

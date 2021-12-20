@@ -4,18 +4,10 @@
 #include "regles.hh"
 #include "r_argent.hh"
 
-void R_argent :: vente(std::double prix, std::string type, Jeu* joueur, Jeu* id_joueur /*pointeur vers la classe joueur*/)
+std::double R_argent::gain(Jeu* n, Jeu* b)
 {
-  // Le joueur courant devient le propietaire de la case :
-  joueur.propietaire = id_joueur;
-
-  // Mise à jour du budget restant :
-  joueur.budget_restant = joueur.budget_restant - case.prix ;
-}
-
-bool R_argent :: achat()
-{
-  cout << " Voulez - vous être propriétaire de cette case ? " << endl ;
-  if (cin == "yes"){return TRUE;}
-  else {return FALSE;}
+  if ((n.num_tour)%3 == 0 )
+  {
+    b.budget_restant = b.budget_restant * 3 ;
+  }
 }

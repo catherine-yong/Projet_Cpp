@@ -7,17 +7,15 @@ class R_argent: public Regles
 {
   public :
   // constructeurs :
+  R_argent();
+  R_argent(const R_argent &r);
 
   // destructeur :
   ~R_argent(){};
 
   // fonctions :
-  std::bool achat();
-  void vente();
-
+  std::double gain();
 
   private :
-  std::double prix ;
-  std::string type ;
 
 };

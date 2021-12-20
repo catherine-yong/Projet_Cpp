@@ -18,7 +18,7 @@ class Carburant : public Fusee
   std::string get_marque() const{return marque;};
   std::double get_prix() const{return prix;};
   void affiche_info() const;
-  
+
   private :
   std::string marque;
   std::double prix;

@@ -9,7 +9,7 @@ Planete::Planete(const Planete & p) // constructeur par copie
   nom = p.nom;
   masse = p.masse;
   volume = p.volume;
-  distance_soleil = p.distance_soleil ; 
+  distance_soleil = p.distance_soleil ;
   prix = p.prix;
 }
 
