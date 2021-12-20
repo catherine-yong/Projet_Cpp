@@ -2,19 +2,20 @@
 #include <string>
 #include "jeu.hh"
 #include "plateau.hh"
+#include "planete.hh"
 
-class Lune : public Planete // Ne reconnait pas Planete comme classe ou struct 
+class Lune : public Planete 
 {
   public :
-  // constructeurs :
+  
   Lune();
   Lune(std::string name, int nb, double weight, double planet_distance, double price);
   Lune(const Lune & l);
 
-  // destructeur :
+  
   ~Lune(){};
 
-  // fonctions : // pas sûre que std est necessaire pour double et int
+  
   std::string get_nom() const{return nom;};
   int get_nombre() const{return nombre;};
   double get_masse() const{return masse;};

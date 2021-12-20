@@ -8,6 +8,7 @@ class Joueur : public Jeu
   // constructeurs :
   Joueur(std::string name , std::string pion);
   double get_budget(){return budget_restant;};
+  void set_budget(double amount);
   int get_id(){return id;};
   std::string get_pion(){return pion;};
   void print_pion(); 

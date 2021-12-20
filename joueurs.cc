@@ -12,3 +12,9 @@ void Joueur::print_pion()
     std::cout << get_pion() << std::endl;
 
 }
+
+void Joueur::set_budget(double amount)
+{
+    amount = budget_restant;
+    budget_restant = 3*amount;
+}
