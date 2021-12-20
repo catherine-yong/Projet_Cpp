@@ -5,6 +5,12 @@
 #include "fusee.hh"
 #include "carburant.hh"
 
+Carburant::Carburant() // constructeur par défaut
+{
+  marque = to_string(RandInt(65, 26)); // A REVOIR
+  prix = rand() % 100 + 300 + 1;
+}
+
 Carburant::Carburant(const Carburant & c) // constructeur par copie
 {
   marque = c.marque;
@@ -14,6 +20,6 @@ Carburant::Carburant(const Carburant & c) // constructeur par copie
 void Carburant::affiche_info() const
 {
   cout << "Les propriétés de ce carburant sont ; " << endl ;
-  cout << "- Marque : " <<get_marque()<< endl;
-  cout << "- Prix : " <<get_prix()<< endl ;
+  cout << "- Marque : " << get_marque()<< endl;
+  cout << "- Prix : " << get_prix()<< endl ;
 }

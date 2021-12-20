@@ -4,6 +4,9 @@
 #include "plateau.hh"
 #include "lune.hh"
 
+Lune(std::string name, int nb, double weight, double planet_distance, double price):
+nom(name) , nombre(nb) , masse(weight) , distance_planete(planet_distance) , prix(price);
+
 Lune::Lune(const Lune & l) // constructeur par copie
 {
   nom = l.nom;

@@ -6,7 +6,7 @@ class Joueur : public Jeu
 {
   public :
   // constructeurs :
-
+  Joueur(std::string name , std::string pion);
   // destructeur :
   ~Joueur(){};
 

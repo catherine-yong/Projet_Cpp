@@ -10,4 +10,6 @@ std::double R_argent::gain(Jeu* n, Jeu* b)
   {
     b.budget_restant = b.budget_restant * 3 ;
   }
+
+  return b.budget_restant; // on veut return qqch de type double
 }

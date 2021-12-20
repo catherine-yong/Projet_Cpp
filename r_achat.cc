@@ -16,6 +16,8 @@ void R_argent :: vente(std::double prix, std::string type, Jeu* joueur, Jeu* id_
 bool R_argent :: achat()
 {
   cout << " Voulez - vous être propriétaire de cette case ? " << endl ;
-  if (cin == "yes"){return TRUE;}
-  else {return FALSE;}
+  if (cin == "yes")
+    return TRUE;
+  else
+    return FALSE;
 }

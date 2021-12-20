@@ -8,12 +8,13 @@ class Lune : public Planete
   public :
   // constructeurs :
   Lune();
+  Lune(std::string name, int nombre, double masse, double distance_planete, double prix);
   Lune(const Lune & l);
 
   // destructeur :
   ~Lune(){};
 
-  // fonctions :
+  // fonctions : // pas sûre que std est necessaire pour double et int
   std::string get_nom() const{return nom;};
   std::string get_nombre() const{return nombre;};
   std::double get_masse() const{return masse;};

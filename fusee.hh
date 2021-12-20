@@ -9,7 +9,7 @@ class Fusee : public Plateau
   // constructeurs :
   Fusee();
   Fusee(const Fusee & f);
-
+  Fusee(std::string name, std::size_t year, std::double price);
   // destructeur :
   ~Fusee(){};
 
@@ -20,6 +20,8 @@ class Fusee : public Plateau
   void affiche_info() const;
 
   private :
+  static int cpt;
+  int identifiant;
   std::string nom;
   std::size_t annee;
   std::double prix;
