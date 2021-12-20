@@ -11,14 +11,14 @@ class R_achat: public Regles
   R_achat(const R_achat &r);
 
   // destructeur :
-  ~R_achat(){};
+  //~R_achat(){};
 
   // fonctions :
-  std::bool achat();
+  bool achat();
   void vente();
 
   private :
-  std::double prix ;
+  double prix ;
   std::string type ;
 
 };

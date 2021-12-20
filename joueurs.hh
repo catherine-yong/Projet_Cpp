@@ -7,18 +7,25 @@ class Joueur : public Jeu
   public :
   // constructeurs :
   Joueur(std::string name , std::string pion);
+  double get_budget(){return budget_restant;};
+  int get_id(){return id;};
+  std::string get_pion(){return pion;};
+  void print_pion(); 
+
   // destructeur :
-  ~Joueur(){};
+  //~Joueur(){};
 
   // fonctions :
-
+  
 
   private :
   std::string nom;
-  static std::int id;
+  static int id;
   std::string pion;
-  std::int lancer;
+  int lancer;
   bool achat;
-  std::double budget_restant;
-  std::vector<string> patrimoine;
+  double budget_restant;
+  // int vector<string> patrimoine; A REVOIR AVEC LES VECTOR
+
+  
 };

@@ -11,22 +11,22 @@ class Planete : public Plateau
   Planete(const Planete & p);
 
   // destructeur :
-  ~Planete(){};
+  //~Planete(){};
 
   // fonctions :
   std::string get_nom() const{return nom;};
-  std::double get_masse() const{return masse;};
+  double get_masse() const{return masse;};
   //std::vector<int> v;
-  std::double get_volume() const{return volume;};
-  std::double get_distance() const{return distance_soleil;};
-  std::double get_prix() const{return prix;};
+  double get_volume() const{return volume;};
+  double get_distance() const{return distance_soleil;};
+  double get_prix() const{return prix;};
   void affiche_info() const;
 
   private :
   std::string nom;
-  std::double masse;
-  std::vector<string> lunes;
-  std::double volume ;
-  std::double distance_soleil;
-  std::double prix;
+  double masse;
+  // vector<string> lunes; a voir pcq je sais pas manipuler les vector
+  double volume ;
+  double distance_soleil;
+  double prix;
 };

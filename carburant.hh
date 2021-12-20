@@ -4,7 +4,7 @@
 #include "plateau.hh"
 #include "fusee.hh"
 
-class Carburant : public Fusee
+class Carburant : public Fusee // a voir pb héritage
 {
   public :
   // constructeurs :
@@ -12,14 +12,14 @@ class Carburant : public Fusee
   Carburant(const Carburant & c);
 
   // destructeur :
-  ~Carburant(){};
+  // ~Carburant(){};
 
   // fonctions :
   std::string get_marque() const{return marque;};
-  std::double get_prix() const{return prix;};
+  double get_prix() const{return prix;};
   void affiche_info() const;
 
   private :
   std::string marque;
-  std::double prix;
+  double prix;
 };

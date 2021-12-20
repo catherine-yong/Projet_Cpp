@@ -7,7 +7,8 @@
 
 Carburant::Carburant() // constructeur par défaut
 {
-  marque = to_string(RandInt(65, 26)); // A REVOIR
+  int a = rand()%65+26+1;
+  marque = std::to_string(a); // A REVOIR
   prix = rand() % 100 + 300 + 1;
 }
 
@@ -19,7 +20,7 @@ Carburant::Carburant(const Carburant & c) // constructeur par copie
 
 void Carburant::affiche_info() const
 {
-  cout << "Les propriétés de ce carburant sont ; " << endl ;
-  cout << "- Marque : " << get_marque()<< endl;
-  cout << "- Prix : " << get_prix()<< endl ;
+  std::cout << "Les propriétés de ce carburant sont ; " << std::endl ;
+  std::cout << "- Marque : " << get_marque()<< std::endl;
+  std::cout << "- Prix : " << get_prix()<< std::endl ;
 }

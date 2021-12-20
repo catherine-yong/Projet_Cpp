@@ -3,20 +3,20 @@
 #include "jeu.hh"
 #include "plateau.hh"
 
-class Fusee : public Plateau
+class Fusee : public Plateau // pb héritage à voir
 {
   public :
   // constructeurs :
   Fusee();
   Fusee(const Fusee & f);
-  Fusee(std::string name, std::size_t year, std::double price);
+  Fusee(std::string name, std::size_t year, double price);
   // destructeur :
-  ~Fusee(){};
+  // ~Fusee(){};
 
   // fonctions :
   std::string get_nom() const{return nom;};
-  std::double get_annee() const{return annee;};
-  std::double get_prix() const{return prix;};
+  double get_annee() const{return annee;};
+  double get_prix() const{return prix;};
   void affiche_info() const;
 
   private :
@@ -24,6 +24,6 @@ class Fusee : public Plateau
   int identifiant;
   std::string nom;
   std::size_t annee;
-  std::double prix;
+  double prix;
 
 };

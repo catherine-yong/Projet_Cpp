@@ -8,13 +8,13 @@ class Plateau : public Jeu
   // constructeurs :
 
   // destructeur :
-  ~Plateau(){};
+  // ~Plateau(){};
 
   // fonctions :
   std::string affiche_propio();
-  std::int get_id() const{return id;};
+  int get_id() const{return id;};
 
   private :
   std::string propietaire ;
-  static std::int id;
+  static int id;
 };

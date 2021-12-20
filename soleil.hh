@@ -15,14 +15,14 @@ class Soleil : public Plateau
 
   // fonctions :
   std::string get_nom() const{return nom;};
-  std::double get_masse() const{return masse;};
-  std::double get_volume() const{return volume;};
-  std::double get_prix() const{return prix;};
+  double get_masse() const{return masse;};
+  double get_volume() const{return volume;};
+  double get_prix() const{return prix;};
   void affiche_info() const;
 
   private :
   std::string nom;
-  std::double masse;
-  std::double volume;
-  std::double prix;
+  double masse;
+  double volume;
+  double prix;
 };

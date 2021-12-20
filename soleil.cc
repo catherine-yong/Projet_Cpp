@@ -25,9 +25,9 @@ Soleil::Soleil(const Soleil & s) // constructeur par copie
 
 void Soleil::affiche_info() const
 {
-  cout << "Les propriétés de ce soleil sont ; " << endl ;
-  cout << "- Nom : " <<get_nom()<< endl;
-  cout << "- Masse : " <<get_masse()<< endl ;
-  cout << "- Volume : " <<get_volume()<< endl ;
-  cout << "- Prix : " <<get_prix()<< endl ;
+  std::cout << "Les propriétés de ce soleil sont ; " << std::endl ;
+  std::cout << "- Nom : " <<get_nom()<< std::endl;
+  std::cout << "- Masse : " <<get_masse()<< std::endl ;
+  std::cout << "- Volume : " <<get_volume()<< std::endl ;
+  std::cout << "- Prix : " <<get_prix()<< std::endl ;
 }

@@ -15,10 +15,10 @@ Planete::Planete(const Planete & p) // constructeur par copie
 
 void Planete::affiche_info() const
 {
-  cout << "Les propriétés de cette planète sont ; " << endl ;
-  cout << "- Nom : " <<get_nom()<< endl;
-  cout << "- Masse : " <<get_masse()<< endl ;
-  cout << "- Volume : " <<get_volume()<< endl ;
-  cout << "- Distance planète - soleil : " <<get_distance()<< endl ;
-  cout << "- Prix : " <<get_prix()<< endl ;
+  std::cout << "Les propriétés de cette planète sont ; " << std::endl ;
+  std::cout << "- Nom : " <<get_nom()<< std::endl;
+  std::cout << "- Masse : " <<get_masse()<< std::endl ;
+  std::cout << "- Volume : " <<get_volume()<< std::endl ;
+  std::cout << "- Distance planète - soleil : " <<get_distance()<< std::endl ;
+  std::cout << "- Prix : " <<get_prix()<< std::endl ;
 }

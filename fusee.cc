@@ -4,18 +4,18 @@
 #include "plateau.hh"
 #include "fusee.hh"
 
-int Fusee:cpt = 0;
+int Fusee::cpt = 0;
 
 Fusee::Fusee()
 {
   identifiant = cpt;
   cpt++;
-  nom = "fusee_" + to_string(identifiant);
+  nom = "fusee_" + std::to_string(identifiant);
   annee = 2020; // annee de lancement
   prix = 1000; // prix a voir
 }
 
-Fusee::Fusee(std::string name, std::size_t year, std::double price):nom(name), annee(year) , prix(price)
+Fusee::Fusee(std::string name, std::size_t year, double price):nom(name), annee(year) , prix(price)
 {
   identifiant = cpt;
   cpt++;
@@ -25,16 +25,16 @@ Fusee::Fusee(const Fusee & f) // constructeur par copie
 {
   identifiant = cpt;
   cpt++;
-  nom = p.nom;
-  annee = p.annee;
-  prix = p.prix;
+  nom = f.nom;
+  annee = f.annee;
+  prix = f.prix;
   identifiant = identifiant+1;
 }
 
 void Fusee::affiche_info() const
 {
-  cout << "Les propriétés de cette fusée sont ; " << endl ;
-  cout << "- Nom : " <<get_nom()<< endl;
-  cout << "- Année : " <<get_annee()<< endl ;
-  cout << "- Prix : " <<get_prix()<< endl ;
+  std::cout << "Les propriétés de cette fusée sont ; " << std::endl ;
+  std::cout << "- Nom : " <<get_nom()<< std::endl;
+  std::cout << "- Année de lancement : " <<get_annee()<< std::endl ;
+  std::cout << "- Prix : " <<get_prix()<< std::endl ;
 }

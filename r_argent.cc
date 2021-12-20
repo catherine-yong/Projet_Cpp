@@ -3,13 +3,13 @@
 #include "jeu.hh"
 #include "regles.hh"
 #include "r_argent.hh"
+#include "joueurs.hh"
 
-std::double R_argent::gain(Jeu* n, Jeu* b)
+void R_argent::gain(Jeu* game, Joueur* player1, Joueur* player2)
 {
-  if ((n.num_tour)%3 == 0 )
+  if ((game->get_tour())%3 == 0 )
   {
-    b.budget_restant = b.budget_restant * 3 ;
+    player1.get_budget() = player1->budget_restant * 3 ;
   }
 
-  return b.budget_restant; // on veut return qqch de type double
 }

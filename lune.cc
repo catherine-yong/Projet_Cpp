@@ -4,8 +4,9 @@
 #include "plateau.hh"
 #include "lune.hh"
 
-Lune(std::string name, int nb, double weight, double planet_distance, double price):
-nom(name) , nombre(nb) , masse(weight) , distance_planete(planet_distance) , prix(price);
+Lune::Lune(std::string name, int nb, double weight, double planet_distance, double price):
+nom(name) , nombre(nb) , masse(weight) , distance_planete(planet_distance) , prix(price)
+{};
 
 Lune::Lune(const Lune & l) // constructeur par copie
 {
@@ -16,12 +17,12 @@ Lune::Lune(const Lune & l) // constructeur par copie
   prix = l.prix;
 }
 
-void Planete::affiche_info() const
+void Lune::affiche_info() const
 {
-  cout << "Les propriétés de cette lune sont ; " << endl ;
-  cout << "- Nom : " <<get_nom()<< endl;
-  cout << "- Nombre : " <<get_nombre()<< endl;
-  cout << "- Masse : " <<get_masse()<< endl ;
-  cout << "- Distance planète - lune : " <<get_distance()<< endl ;
-  cout << "- Prix : " <<get_prix()<< endl ;
+  std::cout << "Les propriétés de cette lune sont ; " << std::endl ;
+  std::cout << "- Nom : " <<get_nom()<< std::endl;
+  std::cout << "- Nombre : " <<get_nombre()<< std::endl;
+  std::cout << "- Masse : " <<get_masse()<< std::endl ;
+  std::cout << "- Distance planète - lune : " <<get_distance()<< std::endl ;
+  std::cout << "- Prix : " <<get_prix()<< std::endl ;
 }
