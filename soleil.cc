@@ -14,6 +14,8 @@ Soleil::Soleil() // constructeur
   prix = 1000; // a voir
 }
 
+
+
 Soleil::Soleil(const Soleil & s) // constructeur par copie
 {
   nom = s.nom;
@@ -23,9 +25,9 @@ Soleil::Soleil(const Soleil & s) // constructeur par copie
 }
 
 
-void Soleil::affiche_info() const
+void Soleil::affiche_info() 
 {
-  std::cout << "Les propriétés de ce soleil sont ; " << std::endl ;
+  std::cout << "Les propriétés de ce soleil sont : " << std::endl ;
   std::cout << "- Nom : " <<get_nom()<< std::endl;
   std::cout << "- Masse : " <<get_masse()<< std::endl ;
   std::cout << "- Volume : " <<get_volume()<< std::endl ;

@@ -1,7 +1,10 @@
+#pragma once
+
 #include <iostream>
 #include <string>
 #include "jeu.hh"
 #include "regles.hh"
+#include "joueurs.hh"
 
 class R_argent: public Regles
 {
@@ -12,7 +15,7 @@ class R_argent: public Regles
   void gain(Jeu* game, Joueur* player1, Joueur* player2);
 
   // destructeur :
-  ~R_argent(){};
+  //~R_argent(){};
 
   // fonctions :
   double gain();

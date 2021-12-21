@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include <string>
 #include "jeu.hh"
@@ -29,4 +31,5 @@ class Planete : public Plateau
   double volume ;
   double distance_soleil;
   double prix;
+  Jeu *j;
 };

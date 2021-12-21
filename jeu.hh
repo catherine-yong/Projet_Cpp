@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include <string>
 
@@ -10,10 +12,10 @@ class Jeu
   virtual ~Jeu() = 0 ;
 
   // getter :
-  std::string get_name() const{return nom_du_jeu;};
-  int get_number() const{return nbr_joueur;};
-  int get_diff() const{return difficulte;};
-  int get_tour() const{return num_tour;};
+  virtual std::string get_nom() const = 0;
+  virtual int get_nombre() const = 0;
+  virtual int get_diff() const = 0;
+  virtual int get_tour() const = 0;
 
   private :
   std::string nom_du_jeu ;

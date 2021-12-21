@@ -2,9 +2,22 @@
 #include <string>
 #include "joueurs.hh"
 
+int Joueur::cpt = 0;
+
+#define BUDGET_RESTANT 1000
+
+Joueur::Joueur()
+{
+    id = cpt;
+    cpt++;
+    nom = "joueur_" + std::to_string(id);
+    pion = "pion_" + std::to_string(id);
+    budget_restant = BUDGET_RESTANT;
+}
+
 Joueur::Joueur(std::string name , std::string pion): nom(name),pion(pion)
 {
-    budget_restant = 1000; // budget de base
+    budget_restant = BUDGET_RESTANT; // budget de base
 }
 
 void Joueur::print_pion()
@@ -13,8 +26,8 @@ void Joueur::print_pion()
 
 }
 
-void Joueur::set_budget(double amount)
+void Joueur::set_budget_tour()
 {
-    amount = budget_restant;
-    budget_restant = 3*amount;
+    budget_restant = 3*budget_restant;
 }
+

@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include <string>
 #include "jeu.hh"
@@ -17,4 +19,5 @@ class Regles : public Jeu
 
   private :
   std::string nom ;
+  Jeu *r;
 };

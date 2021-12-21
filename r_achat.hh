@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include <string>
 #include "jeu.hh"
@@ -15,10 +17,12 @@ class R_achat: public Regles
 
   // fonctions :
   bool achat();
-  void vente();
+  void vente(double prix, Jeu* case_jeu, Jeu* joueur);
 
   private :
   double prix ;
   std::string type ;
+  Jeu *j;
+  
 
 };
