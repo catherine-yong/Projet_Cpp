@@ -1,10 +1,17 @@
+#include <iostream>
+#include <string>
+#include <cstring>
 #include "plateau.hh"
+#include "case.hh"
+#include "jeu.hh"
 
-std::string Plateau::affiche_proprio()
+
+Plateau::Plateau() // je cree un plateau comptenant toutes les cases
 {
-    std::string proprio = get_proprio();
+  std::vector<std::string> vec(c->cases, c->cases + sizeof(c->cases) / sizeof(c->cases[0]));
 
-    std::cout << "La case appartient au joueur " << proprio << std::endl; 
-
-    return proprio;
+  for (int i = 0; i < vec.size(); i++)
+  {
+    plateau.push_back(vec[i]);
+  }
 }

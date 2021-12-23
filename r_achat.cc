@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cstring>
 #include "jeu.hh"
 #include "regles.hh"
 #include "r_achat.hh"
@@ -7,6 +8,8 @@
 void R_achat::vente(double prix, Jeu* case_jeu, Jeu* joueur)
 {
   // Le joueur courant devient le propietaire de la case :
+  // on copie dans propietaire le nom du joueur :
+  //strcpy(case_jeu->proprietaire, case_jeu->proprietaire);
   case_jeu->proprietaire = joueur->get_nom();
 
   // Mise à jour du budget restant :
@@ -21,7 +24,7 @@ bool R_achat::achat()
   bool value = false;
 
   std::cout << " Voulez - vous etre proprietaire de cette case ? (yes/no)" << std::endl ;
-  
+
   std::cin >> answer;
 
   int res = answer.compare(yes);

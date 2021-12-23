@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "joueurs.hh"
+#include "jeu.hh"
 
 int Joueur::cpt = 0;
 
@@ -20,6 +21,11 @@ Joueur::Joueur(std::string name , std::string pion): nom(name),pion(pion)
     budget_restant = BUDGET_RESTANT; // budget de base
 }
 
+Joueur::Joueur(std::string n):Jeu(n)
+{}
+
+
+
 void Joueur::print_pion()
 {
     std::cout << get_pion() << std::endl;
@@ -30,4 +36,3 @@ void Joueur::set_budget_tour()
 {
     budget_restant = 3*budget_restant;
 }
-

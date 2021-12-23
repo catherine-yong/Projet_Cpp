@@ -31,5 +31,5 @@ class Planete : public Plateau
   double volume ;
   double distance_soleil;
   double prix;
-  Jeu *j;
+  //Jeu *j;
 };

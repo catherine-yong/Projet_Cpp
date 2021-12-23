@@ -6,7 +6,7 @@
 
 int main()
 {
-    Soleil sun;
+    Soleil sun; 
 
 
     return 0;

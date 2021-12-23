@@ -2,23 +2,28 @@
 
 #include <iostream>
 #include <string>
+#include <cstring>
+#include <vector>
 #include "jeu.hh"
+#include "case.hh"
 
-class Plateau : public Jeu
+class Plateau : public Case
 {
   public :
   // constructeurs :
+  Plateau();
 
   // destructeur :
-  
+
+  // getter :
 
   // fonctions :
-  std::string affiche_proprio();
-  std::string get_proprio(){return proprietaire;};
-  int get_id() const{return id;};
+
+  // ATTRIBUTS :
+
+  std::vector<std::string> plateau;
 
   private :
-  std::string proprietaire ;
-  static int id;
-  Jeu *j;
+  Case* c;
+
 };
