@@ -27,6 +27,8 @@ Joueur::Joueur(Joueur &j)
 
 Joueur::Joueur(std::string name , std::string pion): nom(name),pion(pion)
 {
+    id = cpt;
+    cpt++;
     budget_restant = budget_constant; // budget de base
 }
 
@@ -84,4 +86,13 @@ bool Joueur::achat()
 
 
   return value;
+}
+
+void Joueur::affiche_info() 
+{
+  std::cout << "Les propriétés de ce joueur sont : " << std::endl ;
+  std::cout << "- Nom : " << get_nom() << std::endl;
+  std::cout << "- Id : " << std::to_string(get_id())<< std::endl ;
+  std::cout << "- Pion : " <<get_pion()<< std::endl ;
+  std::cout << "- Budget : " <<std::to_string(get_budget())<< std::endl ;
 }

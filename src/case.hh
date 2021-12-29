@@ -20,7 +20,6 @@ class Case : public Jeu
   { proprietaire = name_proprio; return proprietaire;};
   double get_prix() override {return prix;};
   double set_budget(double prix) override {return prix;};
-  
   std::string affiche_proprio();
 
   void affiche_info();

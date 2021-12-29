@@ -63,7 +63,14 @@ int main()
     Carburant essence("random",2);
     essence.affiche_info();
 
+    Joueur joueur;
+    joueur.affiche_info();
 
+    Joueur j1("cathy","dog");
+    j1.affiche_info();
+
+    Joueur j2(joueur);
+    j2.affiche_info();
 
 
     return 0;
