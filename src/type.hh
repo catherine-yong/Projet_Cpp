@@ -10,14 +10,17 @@
 class Type : public Case
 {
   public :
-  // constructeurs :
 
-  virtual void affiche_info() = 0;
-  virtual double get_prix() = 0;
-  std::vector<std::string> plateau;
+  Type();
 
   ~Type(){};
 
+  virtual void affiche_info() = 0;
+  virtual double get_prix() = 0;
+
+  std::vector<std::string> plateau;
+
   private :
-  
+
+  Case* c;
 };

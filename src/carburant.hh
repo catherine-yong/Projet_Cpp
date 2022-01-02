@@ -6,25 +6,25 @@
 #include "type.hh"
 #include "fusee.hh"
 
-class Carburant : public Fusee 
+class Carburant : public Fusee
 {
   public :
-    // constructeurs :
+
     Carburant();
     Carburant(const Carburant & c);
     Carburant(std::string brand , double price);
 
-    // destructeur :
     ~Carburant(){};
 
-    // fonctions :
     std::string get_marque() const{return marque;};
-    double get_prix() const{return prix;};
-    void affiche_info() const;
+    double get_prix() override{return prix;};
+
+    void affiche_info()override;
 
   private :
-    std::string marque;
-    double prix;
+  
     int id;
     static int cpt;
+    std::string marque;
+    double prix;
 };

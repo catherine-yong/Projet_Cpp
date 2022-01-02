@@ -17,7 +17,7 @@ class Planete : public Type
   ~Planete(){};
 
   // fonctions :
-  std::string get_nom() const{return nom;};
+  std::string get_nom() override{return nom;};
   double get_masse() const{return masse;};
   //std::vector<int> v;
   double get_volume() const{return volume;};
@@ -25,7 +25,7 @@ class Planete : public Type
   double get_prix() override {return prix;};
   double get_nb_lunes() const { return nb_lunes;};
   void affiche_info() override ;
-  
+
 
   private :
   std::string nom;
@@ -37,5 +37,5 @@ class Planete : public Type
   // vector<string> lunes; a voir pcq je sais pas manipuler les vector
   double prix;
   int nb_lunes;
-  Jeu *j;
+  //Jeu *j;
 };

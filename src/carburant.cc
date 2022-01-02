@@ -9,21 +9,21 @@
 
 int Carburant::cpt = 0;
 
-Carburant::Carburant() // constructeur par défaut
+Carburant::Carburant()
 {
   srand(time(NULL));
 
   id = cpt;
   cpt++;
-  marque = "carburant_" + std::to_string(id); 
+  marque = "carburant_" + std::to_string(id);
   prix = rand() % 100 + 300 + 1;
 }
 
-Carburant::Carburant(const Carburant & c) // constructeur par copie
+Carburant::Carburant(const Carburant & c)
 {
   id = cpt;
   cpt++;
-  marque = "carburant_" + std::to_string(id); 
+  marque = "carburant_" + std::to_string(id);
   prix = c.prix;
 }
 
@@ -33,7 +33,7 @@ Carburant::Carburant(std::string brand , double price):marque(brand),prix(price)
   cpt++;
 }
 
-void Carburant::affiche_info() const
+void Carburant::affiche_info()
 {
   std::cout << "Les propriétés de ce carburant sont ; " << std::endl ;
   std::cout << "- Marque : " << get_marque()<< std::endl;
