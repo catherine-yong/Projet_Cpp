@@ -79,4 +79,28 @@ TEST_CASE("1 : Constructeurs")
     REQUIRE(f3.get_annee() == 2000);
     REQUIRE(f3.get_prix() == 800);
   }
+
+  SECTION("6 : Carburant")
+  {
+
+  }
+
+  SECTION("7 : Case")
+  {
+
+  }
+}
+
+TEST_CASE("2 : Partie de jeu")
+{
+  SECTION("1 : Au niveau du joueur")
+  {
+
+  }
+
+  SECTION("2 : Au niveau du plateau")
+  {
+
+  }
+
 }
