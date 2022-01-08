@@ -26,16 +26,13 @@ class Joueur : public Jeu
   double get_prix() override { return -1;};
 
   void print_pion();
-  void set_budget_tour();
+  double set_budget_tour();
   bool achat();
-  //void set_budget_achat();
   void affiche_info();
   int lancer();
   void deplacement();
-  void vente(Case &case_jeu); 
+  void vente(Type &case_jeu);
   double gain(Jeu &game);
-  std::string maj_p();
-
 
   Case c; //pour avoir accès aux attributs de la classe Case
 

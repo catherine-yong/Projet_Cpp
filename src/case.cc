@@ -12,7 +12,8 @@ Case::Case()
   id = cpt;
   cpt++;
   nom_case = "case_" + std::to_string(id);
-  proprietaire = "Unknown" ;
+  //proprietaire = "Unknown" ;
+  proprietaire = liste_propio[id];
 }
 
 Case::Case(std::string n)
@@ -20,7 +21,8 @@ Case::Case(std::string n)
   id = cpt;
   cpt++;
   nom_case = "case_" + std::to_string(id);
-  proprietaire = "Unknown" ;
+  //proprietaire = "Unknown" ;
+  proprietaire = liste_propio[id];
 }
 
 Case::Case(Jeu &j)
@@ -28,12 +30,13 @@ Case::Case(Jeu &j)
   id = cpt;
   cpt++;
   nom_case = "case_" + std::to_string(id);
-  proprietaire = "Unknown" ;
+  //proprietaire = "Unknown" ;
+  proprietaire = liste_propio[id];
 }
 
-std::string Case::affiche_proprio()
+std::string Case::affiche_proprio(int i)
 {
-    std::string proprio = get_proprio();
+    std::string proprio = get_proprio(i);
     std::cout << "La case appartient au joueur " << proprio << std::endl;
     return proprio;
 }
@@ -42,7 +45,6 @@ void Case::affiche_info(int i)
 {
   std::cout << "-------------"<< std::endl ;
   std::cout << "• Nom : " <<name_case(i)<< std::endl;
-  std::cout << "• Prix : " <<prix_case(i)<< std::endl;
   std::cout << "• Type : " <<affiche_type(i)<< std::endl;
 }
 
@@ -52,10 +54,16 @@ std::string Case::name_case(int i)
     return nom_case;
 }
 
+std::string Case::name_proprio(int i)
+{
+  proprietaire = liste_propio[i];
+  return proprietaire;
+}
+
 int Case::prix_case(int i)
 {
   srand (time(NULL));
-  case_prix[i] = rand()% 900 + 1;
+  case_prix[i] = rand()% 600 + 1;
   prix = case_prix[i];
   return prix;
 }
@@ -88,28 +96,4 @@ std::string Case::affiche_type(int i)
     res = "Fusee";
   }
   return res;
-}
-
-Case Case::trouve_case(int place_pion , Case *list_cases)
-{
-  Case case_res;
-  int case_compteur = 0 ;
-
-  std::string nom_case = cases[place_pion];
-  std::string current_nom_case = list_cases[case_compteur].get_nom();
-
-
-  while ( (nom_case.compare(current_nom_case) != 0) && (case_compteur) != 22 )
-  {
-    case_compteur++;
-    current_nom_case = list_cases[case_compteur].get_nom();
-  }
-
-  if (case_compteur == 22)
-  {
-    std::cout << "Erreur : La case n'existe pas" << std::endl;
-    exit(1);
-  }
-
-  return case_res;
 }

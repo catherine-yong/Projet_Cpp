@@ -7,7 +7,6 @@
 #include "planete.hh"
 #include "soleil.hh"
 #include "type.hh"
-#include "autres.hh"
 
 #include <time.h>
 #include <stdlib.h>
@@ -15,58 +14,6 @@
 
 int main()
 {
-    // initialisation du plateau
-
-    Case c1("SUN01");
-    Case c2("Px0x7");
-    Case c3("LXioR09");
-    Case c4("PAAR01");
-    Case c5("LR129");
-    Case c6("Lrum43");
-    Case c7("C287907432");
-    Case c8("LhZZAR");
-    Case c9("Fom25X");
-    Case c10("FaRI458");
-    Case c11("L97360");
-    Case c12("L86yt70");
-    Case c13("L5rAaR");
-    Case c14("PxW20");
-    Case c15("C864322452");
-    Case c16("LxXx01");
-    Case c17("P28Txx");
-    Case c18("FuSSS43");
-    Case c19("Lx4531Z");
-    Case c20("LzyR10");
-    Case c21("P87XXXR");
-    Case c22("Fyii111XZ");
-
-    const int len = 22;
-    Case list_cases[len];
-
-    list_cases[0] = c1;
-    list_cases[1] = c2;
-    list_cases[2] = c1;
-    list_cases[3] = c4;
-    list_cases[4] = c5;
-    list_cases[5] = c6;
-    list_cases[6] = c7;
-    list_cases[7] = c8;
-    list_cases[8] = c9;
-    list_cases[9] = c10;
-    list_cases[10] = c11;
-    list_cases[11] = c12;
-    list_cases[12] = c13;
-    list_cases[13] = c14;
-    list_cases[14] = c15;
-    list_cases[15] = c16;
-    list_cases[16] = c17;
-    list_cases[17] = c18;
-    list_cases[18] = c19;
-    list_cases[19] = c20;
-    list_cases[20] = c21;
-    list_cases[21] = c22;
-
-
     srand(time(NULL));
     std::cout << "------------------------------------------------------------------------------ " << std::endl;
     std::cout << "------------------------------------------------------------------------------" << std::endl;
@@ -80,6 +27,9 @@ int main()
 
     std::string nom ;
     std::string pion;
+    Case c;
+    int cmpt_tour = 1;
+    std::string answer;
 
     std::cout << std::endl ;
     std::cout << std::endl ;
@@ -90,11 +40,6 @@ int main()
     std::cin >> nom ;
     std::cout << "• Pion (@, £, *, $, %) : " << std::endl ;
     std::cin >> pion ;
-    while (!bon_pion(pion))
-    {
-      std::cout << "Choisir entre (@, £, *, $, %)" << std::endl ;
-      std::cin >> pion ;
-    }
     Joueur a (nom, pion);
     std::cout << "• ID : " << a.get_id() <<std::endl ;
 
@@ -107,11 +52,6 @@ int main()
     std::cin >> nom ;
     std::cout << "• Pion (@, £, *, $, %) : " << std::endl ;
     std::cin >> pion ;
-    while (!bon_pion(pion))
-    {
-      std::cout << "Choisir entre (@, £, *, $, %)" << std::endl ;
-      std::cin >> pion ;
-    }
     Joueur b (nom, pion);
     std::cout << "• ID : " << b.get_id() <<std::endl ;
 
@@ -122,15 +62,7 @@ int main()
     std::cout << "------------------------------------------------------------------------------" << std::endl;
     std::cout << std::endl ;
 
-    std::cout << "------------------------------------------------------------------------------" << std::endl;
-    std::cout << "On a les informations suivantes pour chaque joueur : " << std::endl;
-    std::cout << "------------------------------------------------------------------------------" << std::endl;
-    a.affiche_info();
-    b.affiche_info();
-
-    std::cout << std::endl ;
-
-    while ((a.patrimoine).size() != 2 || (b.patrimoine).size() != 2)
+    while ((a.patrimoine).size() != 2 && (b.patrimoine).size() != 2)
     {
         // Le premier joueur commence :
         std::cout << std::endl ;
@@ -139,12 +71,23 @@ int main()
         std::cout<<"                        Au tour de "<<a.get_nom() << ":"<<std::endl ;
         std::cout << "------------------------------------------------------------------------------" << std::endl;
         std::cout << std::endl ;
-        std::cout<<a.get_nom()<<" lance le dé !" << std::endl ;
+        std::cout<<a.get_nom()<<" lance le de !" << std::endl ;
         a.deplacement();
-
         std::cout<<a.get_nom()<<" se trouve au niveau de la case "<<a.place_pion << std::endl ;
-        a.achat();
-        a.affiche_info();
+        std::cout<<"budget : "<<a.get_budget()<< std::endl ;
+
+        if(c.liste_propio[a.place_pion].compare("Unknown")==0)
+        {
+          a.achat();
+          c.liste_propio[a.place_pion]=a.get_nom();
+        }
+        else
+        {
+          std::cout << "La case "<< a.place_pion <<" appartient à un autre joueur ! "<< std::endl;
+        }
+
+        std::cout << "Entrez pour continuer "<<std::endl ;
+        std::cin >> answer;
 
         std::cout << std::endl ;
         std::cout << std::endl ;
@@ -157,10 +100,31 @@ int main()
         std::cout<<b.get_nom()<<" lance le de !" << std::endl ;
         b.deplacement();
         std::cout<<b.get_nom()<<" se trouve au niveau de la case "<<b.place_pion << std::endl ;
-        b.achat();
-        b.affiche_info();
-    }
+        std::cout << std::endl ;
+        std::cout<<"Budget : "<<b.get_budget()<< std::endl ;
+        std::cout << std::endl ;
 
+        if(c.liste_propio[b.place_pion].compare("Unknown")==0)
+        {
+          b.achat();
+          c.liste_propio[b.place_pion]=b.get_nom();
+        }
+        else
+        {
+          std::cout << "La case "<< b.place_pion <<" appartient à un autre joueur ! "<< std::endl;
+        }
+
+        std::cout << "Entrez OK pour continuer "<<std::endl ;// maybe a changer c'est juste pour ecrire n'importe quoi ppour continuer
+        std::cin >> answer;
+
+        cmpt_tour ++;
+
+        if ((cmpt_tour)%3 == 0 )
+        {
+          a.set_budget_tour();
+          b.set_budget_tour();
+        }
+    }
     if (a.patrimoine.size() == 2)
     {
       std::cout << std::endl ;
