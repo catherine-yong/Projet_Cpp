@@ -1,6 +1,12 @@
 #define CATCH_CONFIG_MAIN
-#include "catch.hpp"
 #include <list>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <fstream>
+#include"catch.hpp"
+
+using namespace std;
 
 #include "carburant.hh"
 #include "case.hh"
@@ -10,14 +16,13 @@
 #include "lune.hh"
 #include "planete.hh"
 #include "soleil.hh"
-#include "type.hh""
 
 TEST_CASE("1 : Constructeurs")
 {
   SECTION("Soleil")
   {
     Soleil a , b(a) , c("soleil_c",50,10,300);
-    
+
     REQUIRE(a.get_nom() == "Sun");
     REQUIRE(b == a);
     REQUIRE(c.get_nom() == "soleil_c");
@@ -29,7 +34,7 @@ TEST_CASE("1 : Constructeurs")
   SECTION("2 : Planetes")
   {
     Planete p1 , p2(p1) , p3("Planete_TERRE",33,1000,26,500,3);
-  
+
     REQUIRE(p1.get_nom() == "planet_1");
     REQUIRE(p1.get_nb_lunes() == 2);
     REQUIRE(p2 == p1);

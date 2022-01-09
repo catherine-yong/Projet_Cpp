@@ -1,19 +1,15 @@
 CC=g++
-CCFLAGS=-Wall -Werror -std=c++11 -g
-SRC_DIR=../src
-SRC=$(wildcard $(SRC_DIR)/pbPlots/*.cpp) $(wildcard $(SRC_DIR)/*.cpp)
-OBJ= $(SRC:.cpp=.o)
-TST= $(wildcard *.cpp)
-OBJ_TEST = $(filter-out $(SRC_DIR)/main.o, $(OBJ)) $(TST:.cpp=.o)
-EXEC=testcase
+CCFLAGS= -Wall -Werror -std=c++11 -g
+SRC= $(wildcard ../*.cc)
+OBJ= $(SRC:.cc=.o)
+TST= $(wildcard *.cc)
+OBJ_TEST = $(filter-out ../main.o, $(OBJ)) $(TST:.cc=.o)
 
-all: $(EXEC)
+testcase : $(OBJ_TEST)
+	$(CC) $(CCFLAGS)  -o $@ $^
 
-$(EXEC): $(OBJ_TEST)
-	$(CC) $^  -o $@
+%.o: %.cc
+	$(CC) $(CCFLAGS) -I../ -o $@ -c $<
 
-%.o: %.cpp
-	$(CC) -I$(SRC_DIR) -o $@ -c $<
-
-clean:
-	rm -f $(OBJ_TEST) $(EXEC)
+clean :
+	rm -f $(OBJ_TEST) testcase
