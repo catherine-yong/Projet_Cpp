@@ -18,7 +18,6 @@ class Carburant : public Fusee
 
     std::string get_marque() const{return marque;};
     double get_prix() override{return prix;};
-
     void affiche_info()override;
 
   private :

@@ -33,6 +33,7 @@ class Joueur : public Jeu
   void deplacement();
   void vente(Type &case_jeu);
   double gain(Jeu &game);
+  
 
   Case c; //pour avoir accès aux attributs de la classe Case
 

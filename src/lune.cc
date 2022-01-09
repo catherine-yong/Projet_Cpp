@@ -35,9 +35,20 @@ Lune::Lune(const Lune & l) // constructeur par copie
 
 void Lune::affiche_info() 
 {
-  std::cout << "Les propriétés de cette lune sont ; " << std::endl ;
+  std::cout << "Les proprietes de cette lune sont ; " << std::endl ;
   std::cout << "- Nom : " <<get_nom()<< std::endl;
   std::cout << "- Masse : " <<get_masse()<< std::endl ;
   std::cout << "- Distance planète - lune : " <<get_distance()<< std::endl ;
   std::cout << "- Prix : " <<get_prix()<< std::endl ;
+}
+
+bool Lune::operator==(const Lune &l) const 
+{
+  bool val = false;
+
+  if (( l.masse == this->masse)  &&  ( l.prix == this->prix) && 
+  (l.distance_planete == this->distance_planete)) 
+    val = true;
+  
+  return val;
 }

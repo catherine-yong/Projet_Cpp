@@ -11320,7 +11320,7 @@ namespace Catch {
 
     MessageInfo::MessageInfo(   StringRef const& _macroName,
                                 SourceLineInfo const& _lineInfo,
-                                ResultWas::OfType _type )
+                               ResultWas::OfType _type )
     :   macroName( _macroName ),
         lineInfo( _lineInfo ),
         type( _type ),

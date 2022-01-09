@@ -19,6 +19,7 @@ class Soleil : public Type
   double get_masse()  {return masse;};
   double get_volume() {return volume;};
   double get_prix() override {return prix;};
+  bool operator==(const Soleil &s) const;
 
   void affiche_info()override ;
 

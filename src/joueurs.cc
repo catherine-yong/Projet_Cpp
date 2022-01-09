@@ -72,13 +72,13 @@ void Joueur::vente(Type &case_achetee)
 void Joueur::affiche_info()
 {
   std::cout << std::endl ;
-  std::cout << " Joueur n°"<< id <<" :"<< std::endl ;
+  std::cout << " Joueur "<< id <<" :"<< std::endl ;
   std::cout << "-------------"<< std::endl ;
-  std::cout << "• Nom : " <<get_nom()<< std::endl;
-  std::cout << "• Pion : " <<get_pion()<< std::endl;
-  std::cout << "• Budget : " <<budget_restant<< std::endl;
-  std::cout << "• Liste du patrimoine de "<<get_nom()<<":"<<std::endl;
-  for (int i = 0 ; i < patrimoine.size(); i++)
+  std::cout << "- Nom : " <<get_nom()<< std::endl;
+  std::cout << "- Pion : " <<get_pion()<< std::endl;
+  std::cout << "- Budget : " <<budget_restant<< std::endl;
+  std::cout << "- Liste du patrimoine de "<<get_nom()<<":"<<std::endl;
+  for (size_t i = 0 ; i < patrimoine.size(); i++)
   {
     std::cout << "    - "<<patrimoine[i]<<std::endl;
   }
@@ -135,6 +135,7 @@ bool Joueur::achat()
 {
   std::string answer;
   std::string yes = "yes";
+  std::string no = "no";
   std::string pat = c.name_case(place_pion);
   std::string prop = c.get_proprio(place_pion);
   double nouv_budget = 0.0;
@@ -152,9 +153,21 @@ bool Joueur::achat()
   std::cin >> answer;
   std::cout << std::endl ;
 
-  int res = answer.compare(yes);
+  int res_yes = answer.compare(yes);
+  int res_no = answer.compare(no);
+  
+  while (!(res_yes == 0) && !(res_no == 0))
+  {
+    std::cout << std::endl ;
+    std::cout << "Erreur : Repondez par yes ou no." << std::endl;
+    std::cin >> answer;
+    std::cout << std::endl ;
 
-  if (res == 0)
+    res_yes = answer.compare(yes);
+    res_no = answer.compare(no);
+  }
+
+  if (res_yes == 0)
   {
     value = true;
     prop = c.get_proprio(place_pion);
@@ -162,7 +175,7 @@ bool Joueur::achat()
     if (budget_restant > prix)
     {
       patrimoine.push_back(pat);
-      std::cout << "Félicitation vous etes le proprietaire de la case "<< place_pion << std::endl;
+      std::cout << "Felicitations ! Vous etes le proprietaire de la case "<< place_pion << std::endl;
       nouv_budget = budget_restant - prix;
     }
     if (budget_restant < prix)
@@ -171,5 +184,11 @@ bool Joueur::achat()
     }
     budget_restant = nouv_budget;
   }
+
+  if (res_no == 0)
+  {
+    std::cout << "Vous avez refuse d'acheter la case." << std::endl;
+  }
+
   return value;
 }

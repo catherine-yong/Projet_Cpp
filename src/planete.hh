@@ -25,6 +25,7 @@ class Planete : public Type
   double get_prix() override {return prix;};
   double get_nb_lunes() const { return nb_lunes;};
   void affiche_info() override ;
+  bool operator==(const Planete &p) const;
 
 
   private :
@@ -34,7 +35,7 @@ class Planete : public Type
   double volume ;
   double distance_soleil;
   double masse;
-  // vector<string> lunes; a voir pcq je sais pas manipuler les vector
+  //std::vector <Lunes>; a revoir si c'est ok ou non
   double prix;
   int nb_lunes;
   //Jeu *j;

@@ -33,8 +33,18 @@ Fusee::Fusee(const Fusee & f) // constructeur par copie
 
 void Fusee::affiche_info() 
 {
-  std::cout << "Les propriétés de cette fusée sont ; " << std::endl ;
+  std::cout << "Les propriétés de cette fusee sont ; " << std::endl ;
   std::cout << "- Nom : " <<get_nom()<< std::endl;
   std::cout << "- Année de lancement : " <<get_annee()<< std::endl ;
   std::cout << "- Prix : " <<get_prix()<< std::endl ;
+}
+
+bool Fusee::operator==(const Fusee &f) const
+{
+  bool val = false;
+
+  if (( f.annee == this->annee)  &&  ( f.annee == this->prix) )
+    val = true;
+  
+  return val;
 }

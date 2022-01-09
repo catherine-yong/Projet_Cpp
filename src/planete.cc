@@ -47,3 +47,15 @@ void Planete::affiche_info()
   std::cout << "- Prix : " <<get_prix()<< std::endl ;
   std::cout << "- Nombre de lunes : " << get_nb_lunes() << std::endl ;
 }
+
+bool Planete::operator==(const Planete &p) const
+{
+  bool val = false;
+
+  if (( p.masse == this->masse) && ( p.volume == this->volume) &&
+  ( p.prix== this->prix) && (p.distance_soleil == this->distance_soleil) && 
+  ( p.nb_lunes == this->nb_lunes) )
+    val = true;
+  
+  return val;
+}

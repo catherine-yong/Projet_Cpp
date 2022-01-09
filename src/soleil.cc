@@ -15,7 +15,7 @@ Soleil::Soleil() // constructeur
   nom = "sun_" + std::to_string(id);
   masse = pow(10,30); // valeurs selon masse et volume du Soleil
   volume = pow(10,18);
-  prix = 1000; // a voir
+  prix = 1000; 
 }
 
 Soleil::Soleil(const Soleil & s) // constructeur par copie
@@ -45,4 +45,14 @@ void Soleil::affiche_info()
   std::cout << "- Masse : " <<get_masse()<< std::endl ;
   std::cout << "- Volume : " <<get_volume()<< std::endl ;
   std::cout << "- Prix : " <<get_prix()<< std::endl ;
+}
+
+bool Soleil::operator==(const Soleil &s) const
+{
+  bool val = false;
+
+  if (( s.masse == this->masse) && ( s.volume == this->volume) && ( s.prix == this->prix) )
+    val = true;
+  
+  return val;
 }

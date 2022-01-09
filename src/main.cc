@@ -7,10 +7,13 @@
 #include "planete.hh"
 #include "soleil.hh"
 #include "type.hh"
+#include "autres.hh"
 
 #include <time.h>
 #include <stdlib.h>
 #include <vector>
+
+int const nb_final(2);
 
 int main()
 {
@@ -35,34 +38,54 @@ int main()
     std::cout << std::endl ;
 
     // Joueur 1 :
-    std::cout << "Pour le joueur n°1, saisir les informations suivantes ; " << std::endl ;
-    std::cout << "• Nom : " << std::endl ;
+    std::cout << "Pour le joueur 1, saisir les informations suivantes : " << std::endl ;
+    std::cout << "- Nom : " << std::endl ;
     std::cin >> nom ;
-    std::cout << "• Pion (@, £, *, $, %) : " << std::endl ;
+    std::cout << "- Pion (@, !, *, $, %) : " << std::endl ;
+
     std::cin >> pion ;
+
+    while(!bon_pion(pion))
+    {
+      std::cout << "Veuillez choisir un pion parmi (@, !, *, $, %)" << std::endl;
+      std::cin >> pion ;
+    }
+
     Joueur a (nom, pion);
-    std::cout << "• ID : " << a.get_id() <<std::endl ;
+    std::cout << "- ID : " << a.get_id() <<std::endl ;
 
     std::cout << std::endl ;
     std::cout << std::endl ;
 
     // Joueur 2 :
-    std::cout << "Pour le joueur n°2, saisir les informations suivantes ; " << std::endl ;
-    std::cout << "• Nom : " << std::endl ;
+    std::cout << "Pour le joueur 2, saisir les informations suivantes ; " << std::endl ;
+    std::cout << "- Nom : " << std::endl ;
     std::cin >> nom ;
-    std::cout << "• Pion (@, £, *, $, %) : " << std::endl ;
+    std::cout << "- Pion (@, !, *, $, %) : " << std::endl ;
     std::cin >> pion ;
+
+    while(!bon_pion(pion))
+    {
+      std::cout << "Veuillez choisir un pion parmi (@, !, *, $, %)" << std::endl;
+      std::cin >> pion ;
+    }
+
+    while (pion == a.get_pion())
+    {
+      std::cout << "Vous avez pris le meme pion que le joueur 1. Recommencez SVP " << std::endl;
+      std::cin >> pion ;
+    }
     Joueur b (nom, pion);
-    std::cout << "• ID : " << b.get_id() <<std::endl ;
+    std::cout << "- ID : " << b.get_id() <<std::endl ;
 
 
     // Débuter le jeu :
     std::cout << "------------------------------------------------------------------------------" << std::endl;
-    std::cout << "                        Débutons le jeu " << std::endl ;
+    std::cout << "                        Debutons le jeu " << std::endl ;
     std::cout << "------------------------------------------------------------------------------" << std::endl;
     std::cout << std::endl ;
 
-    while ((a.patrimoine).size() != 2 && (b.patrimoine).size() != 2)
+    while ((a.patrimoine).size() != nb_final && (b.patrimoine).size() != nb_final)
     {
         // Le premier joueur commence :
         std::cout << std::endl ;
@@ -83,11 +106,19 @@ int main()
         }
         else
         {
-          std::cout << "La case "<< a.place_pion <<" appartient à un autre joueur ! "<< std::endl;
+          std::cout << "La case "<< a.place_pion <<" appartient a un autre joueur ! "<< std::endl;
         }
 
-        std::cout << "Entrez pour continuer "<<std::endl ;
+        std::string Ok("Ok");
+        std::string ok("ok");
+        std::cout << "Entrez Ok pour continuer "<<std::endl ;
         std::cin >> answer;
+
+        while ((answer.compare(ok) != 0 ) && (answer.compare(Ok)))
+        {
+          std::cout << "Entrez Ok pour continuer "<<std::endl ;
+          std::cin >> answer;
+        }
 
         std::cout << std::endl ;
         std::cout << std::endl ;
@@ -111,11 +142,17 @@ int main()
         }
         else
         {
-          std::cout << "La case "<< b.place_pion <<" appartient à un autre joueur ! "<< std::endl;
+          std::cout << "La case "<< b.place_pion <<" appartient a un autre joueur ! "<< std::endl;
         }
 
-        std::cout << "Entrez OK pour continuer "<<std::endl ;// maybe a changer c'est juste pour ecrire n'importe quoi ppour continuer
+        std::cout << "Entrez Ok pour continuer "<<std::endl ;
         std::cin >> answer;
+
+        while ((answer.compare(ok) != 0 ) && (answer.compare(Ok)))
+        {
+          std::cout << "Entrez Ok pour continuer "<<std::endl ;
+          std::cin >> answer;
+        }
 
         cmpt_tour ++;
 
@@ -125,19 +162,21 @@ int main()
           b.set_budget_tour();
         }
     }
-    if (a.patrimoine.size() == 2)
+
+    if (a.patrimoine.size() == nb_final)
     {
       std::cout << std::endl ;
       std::cout << "------------------------------------------------------------------------------" << std::endl;
-      std::cout<<"                    Bravo "<<a.get_nom()<<" est le grand gagant ! " << std::endl ;
+      std::cout<<"                    Bravo ! " <<a.get_nom()<<" est le grand gagnant ! " << std::endl ;
       std::cout << "------------------------------------------------------------------------------" << std::endl;
       std::cout << std::endl ;
     }
-    if (b.patrimoine.size() == 2)
+    
+    if (b.patrimoine.size() == nb_final)
     {
       std::cout << std::endl ;
       std::cout << "------------------------------------------------------------------------------" << std::endl;
-      std::cout<<"                    Bravo "<<b.get_nom()<<" est le grand gagant ! " << std::endl ;
+      std::cout<<"                    Bravo ! " <<b.get_nom()<<" est le grand gagnant ! " << std::endl ;
       std::cout << "------------------------------------------------------------------------------" << std::endl;
       std::cout << std::endl ;
     }

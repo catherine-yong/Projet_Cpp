@@ -22,7 +22,7 @@ class Fusee : public Type
   double get_annee() const{return annee;};
   double get_prix() override {return prix;};
   void affiche_info() override;
-
+  bool operator==(const Fusee &f) const;
 
   private :
   static int cpt;
@@ -30,5 +30,5 @@ class Fusee : public Type
   std::string nom;
   std::size_t annee;
   double prix;
-  //Jeu *j;
+  
 };

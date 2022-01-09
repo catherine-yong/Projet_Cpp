@@ -34,7 +34,9 @@ class Case : public Jeu
   // Attribut public :
   std::string cases[22] = {"SUN01","Px0x7","LXioR09","PAAR01","LR129","Lrum43","C287907432","LhZZAR","Fom25X","FaRI458","L97360","L86yt70","L5rAaR","PxW20","C864322452","LxXx01","P28Txx","FuSSS43","Lx4531Z","LzyR10","P87XXXR","Fyii111XZ"};
   int case_prix[22];
-  std::string liste_propio[22] = {[0 ... 21]="Unknown"};
+  std::string liste_propio[22] = {"Unknown","Unknown","Unknown","Unknown","Unknown","Unknown","Unknown","Unknown","Unknown","Unknown","Unknown","Unknown","Unknown","Unknown","Unknown","Unknown","Unknown","Unknown","Unknown","Unknown","Unknown","Unknown"}; 
+
+  
 
   private :
 

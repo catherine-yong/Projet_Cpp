@@ -5,7 +5,7 @@ bool bon_pion(std::string pion) // fait expres qu'elle soit en dehors de la clas
 {
     bool value = true;
 
-    if ((pion != "@") && (pion != "£") && (pion != "*") && (pion != "$") && (pion != "%"))
+    if ((pion != "@") && (pion != "!") && (pion != "*") && (pion != "$") && (pion != "%"))
         value = false;
 
     return value;
