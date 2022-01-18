@@ -21,7 +21,7 @@ TEST_CASE("1 : Constructeurs")
 {
   SECTION("Soleil")
   {
-    Soleil a , b(a) , c("soleil_c",50,10,300);
+    Soleil a , b(a) , c("soleil_c",50,10,300); // erreur ; std::bad_alloc
 
     REQUIRE(a.get_nom() == "Sun");
     REQUIRE(b == a);
@@ -33,7 +33,7 @@ TEST_CASE("1 : Constructeurs")
 
   SECTION("2 : Planetes")
   {
-    Planete p1 , p2(p1) , p3("Planete_TERRE",33,1000,26,500,3);
+    Planete p1 , p2(p1) , p3("Planete_TERRE",33,1000,26,500,3); // erreur : SIGSEGV - Segmentation violation signal
 
     REQUIRE(p1.get_nom() == "planet_1");
     REQUIRE(p1.get_nb_lunes() == 2);
@@ -55,7 +55,7 @@ TEST_CASE("1 : Constructeurs")
     REQUIRE(l1.get_prix() == 30);
     REQUIRE(l2 == l1);
     REQUIRE(l3.get_nom() == "moony");
-    REQUIRE(l3.get_weight() == 5);
+    REQUIRE(l3.get_masse() == 5);
     REQUIRE(l3.get_distance() == 50);
     REQUIRE(l3.get_prix() == 90);
   }
