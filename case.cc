@@ -74,18 +74,18 @@ std::string Case::affiche_type(int i)
 
   if (k.compare("L") == 0 )
     res = "Lune";
-  
+
   if (k.compare("S") == 0 )
     res = "Soleil";
-  
+
   if (k.compare("C") == 0 )
     res = "Carburant";
-  
+
   if (k.compare("P") == 0 )
     res = "Planete";
-  
+
   if (k.compare("F") == 0 )
     res = "Fusee";
-  
+
   return res;
 }

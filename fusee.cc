@@ -11,8 +11,8 @@ Fusee::Fusee()
   identifiant = cpt;
   cpt++;
   nom = "fusee_" + std::to_string(identifiant);
-  annee = 2020; // annee de lancement
-  prix = 1000; // prix a voir
+  annee = 2020;
+  prix = 1000;
 }
 
 Fusee::Fusee(std::string name, std::size_t year, double price):nom(name), annee(year) , prix(price)
@@ -21,7 +21,7 @@ Fusee::Fusee(std::string name, std::size_t year, double price):nom(name), annee(
   cpt++;
 }
 
-Fusee::Fusee(const Fusee & f) // constructeur par copie
+Fusee::Fusee(const Fusee & f)
 {
   identifiant = cpt;
   cpt++;
@@ -31,7 +31,7 @@ Fusee::Fusee(const Fusee & f) // constructeur par copie
   identifiant = identifiant+1;
 }
 
-void Fusee::affiche_info() 
+void Fusee::affiche_info()
 {
   std::cout << "Les propriétés de cette fusee sont ; " << std::endl ;
   std::cout << "- Nom : " <<get_nom()<< std::endl;
@@ -43,8 +43,8 @@ bool Fusee::operator==(const Fusee &f) const
 {
   bool val = false;
 
-  if (( f.annee == this->annee)  &&  ( f.annee == this->prix) )
+  if (( f.annee == this->annee)  &&  ( f.prix == this->prix) )
     val = true;
-  
+
   return val;
 }

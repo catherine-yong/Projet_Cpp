@@ -19,6 +19,7 @@ class Type : public Case
   virtual double get_prix() = 0;
 
   std::vector<std::string> plateau;
+  void affiche_type(); 
 
   private :
 

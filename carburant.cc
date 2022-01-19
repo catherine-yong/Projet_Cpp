@@ -39,3 +39,13 @@ void Carburant::affiche_info()
   std::cout << "- Marque : " << get_marque()<< std::endl;
   std::cout << "- Prix : " << get_prix()<< std::endl ;
 }
+
+bool Carburant::operator==(const Carburant &car) const
+{
+  bool val = false;
+
+  if (( car.prix == this->prix) )
+    val = true;
+
+  return val;
+}
