@@ -7,11 +7,14 @@ class Jeu
 {
   public :
 
+  // Constructeurs :
   Jeu():num_tour(10){};
   Jeu(int nb_tours):num_tour(nb_tours){};
 
+  // Destructeurs :
   ~Jeu(){};
 
+  // Fonctions :
   virtual std::string set_proprio(std::string name) = 0;
   virtual std::string get_nom() = 0;
   virtual double set_budget(double prix) = 0 ;
@@ -24,5 +27,4 @@ class Jeu
 
   int num_tour ;
   int nbr_participant ;
-
 };

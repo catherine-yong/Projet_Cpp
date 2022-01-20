@@ -8,15 +8,16 @@
 class Planete : public Type
 {
   public :
-  // constructeurs :
+
+  // Constructeurs :
   Planete();
   Planete(const Planete & p);
   Planete(std::string name , double vol , double dist , double weight, double price, int n_lunes);
 
-  // destructeur :
+  // Destructeur :
   ~Planete(){};
 
-  // fonctions :
+  // Fonctions :
   std::string get_nom() override{return nom;};
   double get_masse() const{return masse;};
   double get_volume() const{return volume;};
@@ -26,8 +27,8 @@ class Planete : public Type
   void affiche_info() override ;
   bool operator==(const Planete &p) const;
 
-
   private :
+
   std::string nom;
   int id;
   static int cpt;

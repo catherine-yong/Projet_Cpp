@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-bool bon_pion(std::string pion) // fait expres qu'elle soit en dehors de la classe
+bool bon_pion(std::string pion)
 {
     bool value = true;
 
@@ -9,5 +9,4 @@ bool bon_pion(std::string pion) // fait expres qu'elle soit en dehors de la clas
         value = false;
 
     return value;
-
 }

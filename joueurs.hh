@@ -10,13 +10,16 @@ class Joueur : public Jeu
 {
   public :
 
+  // Constructeurs :
   Joueur();
   Joueur(std::string n);
   Joueur(std::string name , std::string pion);
   Joueur(Joueur &j);
 
+  // Destructeur :
   ~Joueur(){};
 
+  // Fonctions :
   int get_id() const {return id;};
   std::string get_nom() override {return nom;} ;
   std::string get_pion() const{return pion;};
@@ -33,12 +36,11 @@ class Joueur : public Jeu
   void deplacement();
   void vente(Type &case_jeu);
   double gain(Jeu &game);
-  
 
-  Case c; //pour avoir accès aux attributs de la classe Case
-
+  // Attributs publics :
   std::vector<std::string> patrimoine;
   static int place_pion ;
+  Case c; // Pour avoir accès aux attributs de la classe Case
 
   private :
 
@@ -47,5 +49,4 @@ class Joueur : public Jeu
   static int cpt;
   std::string pion ;
   double budget_restant;
-
 };

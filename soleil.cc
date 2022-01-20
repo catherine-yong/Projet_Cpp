@@ -8,17 +8,17 @@
 
 int Soleil::cpt = 0;
 
-Soleil::Soleil() // constructeur
+Soleil::Soleil()
 {
   id = cpt;
   cpt++;
   nom = "sun_" + std::to_string(id);
-  masse = pow(10,30); // valeurs selon masse et volume du Soleil
+  masse = pow(10,30);
   volume = pow(10,18);
-  prix = 1000; 
+  prix = 1000;
 }
 
-Soleil::Soleil(const Soleil & s) // constructeur par copie
+Soleil::Soleil(const Soleil & s)
 {
   id = cpt;
   cpt++;
@@ -53,6 +53,6 @@ bool Soleil::operator==(const Soleil &s) const
 
   if (( s.masse == this->masse) && ( s.volume == this->volume) && ( s.prix == this->prix) )
     val = true;
-  
+
   return val;
 }

@@ -13,7 +13,7 @@ Lune::Lune()
   nom = "moon_" + std::to_string(id);
   masse = rand() %100;
   distance_planete = rand() %1000;
-  prix = 30; 
+  prix = 30;
 }
 
 Lune::Lune(std::string name,  double weight, double planet_distance, double price):
@@ -23,7 +23,7 @@ nom(name) , masse(weight) , distance_planete(planet_distance) , prix(price)
   cpt++;
 }
 
-Lune::Lune(const Lune & l) // constructeur par copie
+Lune::Lune(const Lune & l)
 {
   id = cpt;
   cpt++;
@@ -33,7 +33,7 @@ Lune::Lune(const Lune & l) // constructeur par copie
   prix = l.prix;
 }
 
-void Lune::affiche_info() 
+void Lune::affiche_info()
 {
   std::cout << "Les proprietes de cette lune sont ; " << std::endl ;
   std::cout << "- Nom : " <<get_nom()<< std::endl;
@@ -42,13 +42,13 @@ void Lune::affiche_info()
   std::cout << "- Prix : " <<get_prix()<< std::endl ;
 }
 
-bool Lune::operator==(const Lune &l) const 
+bool Lune::operator==(const Lune &l) const
 {
   bool val = false;
 
-  if (( l.masse == this->masse)  &&  ( l.prix == this->prix) && 
-  (l.distance_planete == this->distance_planete)) 
+  if (( l.masse == this->masse)  &&  ( l.prix == this->prix) &&
+  (l.distance_planete == this->distance_planete))
     val = true;
-  
+
   return val;
 }

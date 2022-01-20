@@ -18,7 +18,7 @@ Planete::Planete()
   nb_lunes = 2;
 }
 
-Planete::Planete(const Planete & p) // constructeur par copie
+Planete::Planete(const Planete & p)
 {
   id = cpt;
   cpt++;

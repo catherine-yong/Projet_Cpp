@@ -5,9 +5,7 @@
 
 int Joueur::cpt = 1;
 int Joueur::place_pion = 0 ;
-
 int const budget_constant(1000);
-
 
 Joueur::Joueur()
 {
@@ -51,7 +49,7 @@ double Joueur::set_budget_tour()
   return budget_restant;
 }
 
-double Joueur::gain(Jeu &game)
+double Joueur::gain(Jeu &game) // Tous les 3 tours le budget des joueurs est multiplié par 3
 {
   if ((game.get_tour())%3 == 0 )
     set_budget_tour();
@@ -61,7 +59,6 @@ double Joueur::gain(Jeu &game)
 
 void Joueur::vente(Type &case_achetee)
 {
-
   if (achat())
   {
     case_achetee.set_proprio(nom);
@@ -155,7 +152,7 @@ bool Joueur::achat()
 
   int res_yes = answer.compare(yes);
   int res_no = answer.compare(no);
-  
+
   while (!(res_yes == 0) && !(res_no == 0))
   {
     std::cout << std::endl ;
@@ -167,6 +164,7 @@ bool Joueur::achat()
     res_no = answer.compare(no);
   }
 
+  // Si le joueur souhaite acheter :
   if (res_yes == 0)
   {
     value = true;
@@ -185,6 +183,7 @@ bool Joueur::achat()
     budget_restant = nouv_budget;
   }
 
+  // Si le joueur ne souhaite pas acheter :
   if (res_no == 0)
   {
     std::cout << "Vous avez refuse d'acheter la case." << std::endl;

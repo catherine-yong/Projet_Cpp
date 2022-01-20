@@ -23,6 +23,6 @@ void Type::affiche_type()
   for (int i = 0; i < 22 ; i++)
   {
     p = std::make_pair(i, plateau[i]);
-    std::cout << Case n° <<p.first << ' ' << p.second << std::endl;
+    std::cout << "Case n° "<<p.first <<"  "<< p.second << std::endl;
   }
 }

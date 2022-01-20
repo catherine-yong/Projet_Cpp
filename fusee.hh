@@ -9,15 +9,16 @@
 class Fusee : public Type
 {
   public :
-  // constructeurs :
+
+  // Constructeurs :
   Fusee();
   Fusee(const Fusee & f);
   Fusee(std::string name, std::size_t year, double price);
 
-  // destructeur :
+  // Destructeur :
   ~Fusee(){};
 
-  // fonctions :
+  // Fonctions :
   std::string get_nom() override{return nom;};
   double get_annee() const{return annee;};
   double get_prix() override {return prix;};
@@ -25,10 +26,10 @@ class Fusee : public Type
   bool operator==(const Fusee &f) const;
 
   private :
+
   static int cpt;
   int identifiant;
   std::string nom;
   std::size_t annee;
   double prix;
-  
 };

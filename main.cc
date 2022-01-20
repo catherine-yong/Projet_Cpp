@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include <vector>
 
-int const nb_final(2);
+int const nb_final(12);
 
 int main()
 {
@@ -78,6 +78,16 @@ int main()
     Joueur b (nom, pion);
     std::cout << "- ID : " << b.get_id() <<std::endl ;
 
+    std::string Ok("Ok");
+    std::string ok("ok");
+
+    std::cout << "Entrez Ok pour continuer "<<std::endl ;
+    std::cin >> answer;
+    while ((answer.compare(ok) != 0 ) && (answer.compare(Ok)))
+    {
+      std::cout << "Entrez Ok pour continuer "<<std::endl ;
+      std::cin >> answer;
+    }
 
     // Débuter le jeu :
     std::cout << "------------------------------------------------------------------------------" << std::endl;
@@ -109,8 +119,6 @@ int main()
           std::cout << "La case "<< a.place_pion <<" appartient a un autre joueur ! "<< std::endl;
         }
 
-        std::string Ok("Ok");
-        std::string ok("ok");
         std::cout << "Entrez Ok pour continuer "<<std::endl ;
         std::cin >> answer;
 
@@ -163,6 +171,8 @@ int main()
         }
     }
 
+    // Fin du jeu
+
     if (a.patrimoine.size() == nb_final)
     {
       std::cout << std::endl ;
@@ -171,7 +181,7 @@ int main()
       std::cout << "------------------------------------------------------------------------------" << std::endl;
       std::cout << std::endl ;
     }
-    
+
     if (b.patrimoine.size() == nb_final)
     {
       std::cout << std::endl ;
