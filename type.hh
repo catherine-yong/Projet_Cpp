@@ -20,10 +20,10 @@ class Type : public Case
   // Fonctions :
   virtual void affiche_info() = 0;
   virtual double get_prix() = 0;
-
-  // Attributs publics : 
-  std::vector<std::string> plateau;
   void affiche_type();
+
+  // Attributs publics :
+  std::vector<std::string> plateau;
 
   private :
 

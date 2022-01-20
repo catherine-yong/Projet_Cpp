@@ -16,10 +16,9 @@ class Jeu
 
   // Fonctions :
   virtual std::string set_proprio(std::string name) = 0;
-  virtual std::string get_nom() = 0;
   virtual double set_budget(double prix) = 0 ;
+  virtual std::string get_nom() = 0;
   virtual double get_prix() = 0;
-
   int get_tour() const {return num_tour;};
   int get_participant() const {return nbr_participant;};
 
