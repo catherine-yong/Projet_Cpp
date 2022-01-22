@@ -8,4 +8,4 @@ Nous avons décidé de nous inspirer du jeu mondialement connu : le Monopoly, et
 
 Afin de jouer au jeu, il suffit de réaliser la commande *make* puis d'exécuter le main ( ./main ). 
 
-Dans le fichier test, nous retrouvons les tests unitaires qui vérifient que les classes mises en place sont bien fonctionnelles.
+Dans le fichier tests, nous retrouvons les tests unitaires qui vérifient que les classes mises en place sont bien fonctionnelles.
